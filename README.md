@@ -33,3 +33,36 @@ The IntelliTest Proctor is a web-based platform designed to streamline the proce
 - **Operating Systems**: Compatible with Windows 8 and above, Linux, and Mac
 - **Browsers**: Compatible with Internet Explorer, Chrome, Firefox, Microsoft Edge, or Safari
 - **Software**: MySQL Command Line
+<br>
+
+**HomePage** <br><br>
+![Home Page](images/Picture1.jpg)
+
+
+**Login Page** <br><br>
+![Login Page](images/Picture2.jpg)
+
+
+**Feedback Page** <br><br>
+![Feedback Page](images/Picture3.jpg)
+
+
+**Quiz Page** <br><br>
+![Quiz Page](images/Picture4.jpg)
+
+
+**Quiz Details** <br><br>
+![Quiz Details](images/Picture5.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
