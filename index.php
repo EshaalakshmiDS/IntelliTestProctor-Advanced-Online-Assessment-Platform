@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>|| TEST YOUR SKILL || </title>
+<title>IntelliTestProctor</title>
 <link  rel="stylesheet" href="css/bootstrap.min.css"/>
  <link  rel="stylesheet" href="css/bootstrap-theme.min.css"/>    
  <link rel="stylesheet" href="css/main.css">
@@ -29,7 +29,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 <div class="header">
 <div class="row">
 <div class="col-lg-6">
-<span class="logo">Test Your Skill</span></div>
+<span class="logo">IntelliTestProctor</span></div>
 <div class="col-md-2 col-md-offset-4">
 <a href="#" class="pull-right btn sub1" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp;<span class="title1"><b>Signin</b></span></a></div>
 <!--sign in modal start-->
@@ -160,7 +160,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 <div class="form-group">
   <label class="col-md-12 control-label" for=""></label>
   <div class="col-md-12"> 
-    <input  type="submit" class="sub" value="Sign up" class="btn btn-primary"/>
+    <input  type="submit" class="sub" value="sign up" class="btn btn-primary"/>
   </div>
 </div>
 
@@ -173,7 +173,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 <!--Footer start-->
 <div class="row footer">
 <div class="col-md-3 box">
-<a>Online Examination System</a>
+<a href="https://github.com/EshaalakshmiDS/IntelliTestProctor-Advanced-Online-Assessment-Platform" target="_blank">About Application</a>
 </div>
 <div class="col-md-3 box">
 <a href="#" data-toggle="modal" data-target="#login">Admin Login</a></div>
@@ -181,8 +181,7 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
 <a href="#" data-toggle="modal" data-target="#developers">Developers</a>
 </div>
 <div class="col-md-3 box">
-<!-- <a href="feedback.php" target="_blank">Feedback</a></div></div> -->
-<a>Online Examination System</a>
+<a href="feedback.php" target="_blank">Feedback</a></div></div>
 <!-- Modal For Developers-->
 <div class="modal fade title1" id="developers">
   <div class="modal-dialog">
@@ -196,13 +195,13 @@ var b = document.forms["form"]["cpassword"].value;if (a!=b){alert("Passwords mus
         <p>
 		<div class="row">
 		<div class="col-md-4">
-		 <img src="image/newa.jpg" width=100 height=100 alt="Eshaa" class="img-rounded">
+		 <img src="https://media.licdn.com/dms/image/D5603AQGHLP89OLK86Q/profile-displayphoto-shrink_400_400/0/1706242578753?e=1726704000&v=beta&t=uH4fUJQCjWHKekw21Sn_3YM6DjfoUmw7c-NbObQkxMU" width=100 height=100 alt="B.E in Information Science & Engineering" class="img-rounded">
 		 </div>
 		 <div class="col-md-5">
-		<a href="https://www.linkedin.com/in/eshaalakshmi-d-s-802b65221/" style="color:#202020; font-family:'typo' ; font-size:18px" title="Find on Linkedin">-Eshaa D S</a>
-		<h4 style="color:#202020; font-family:'typo' ;font-size:16px" class="title1">+91 9165063741</h4>
-		<h4 style="font-family:'typo' ">esha1484@gmail.com</h4>
-		<h4 style="font-family:'typo' ">JSSATE, Bangalore</h4></div></div>
+		<a href="https://www.linkedin.com/in/eshaalakshmi-d-s-802b65221/" style="color:#202020; font-family:'typo' ; font-size:18px" title="Find on Linkedin">Eshaalakshmi D S</a>
+		<h4 style="color:#202020; font-family:'typo' ;font-size:16px" class="title1">+91 7829902466</h4>
+		<h4 style="font-family:'typo' ">B.E in Information Science & Engineering</h4>
+		<h4 style="font-family:'typo' ">@JSS Academy of Technical Education </h4></div></div>
 		</p>
       </div>
     
