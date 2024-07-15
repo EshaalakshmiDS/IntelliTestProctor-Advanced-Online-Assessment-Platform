@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>|| DASHBOARD ||</title>
+<title>IntelliTestProctor</title>
 <link  rel="stylesheet" href="css/bootstrap.min.css"/>
  <link  rel="stylesheet" href="css/bootstrap-theme.min.css"/>    
  <link rel="stylesheet" href="css/main.css">
@@ -15,7 +15,7 @@
  	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
 
 <script>
-$(function () 
+$(function () {
     $(document).on( 'scroll', function(){
         console.log('scroll top : ' + $(window).scrollTop());
         if($(window).scrollTop()>=$(".logo").height())
@@ -35,7 +35,7 @@ $(function ()
 <div class="header">
 <div class="row">
 <div class="col-lg-6">
-<span class="logo">Test Your Skill</span></div>
+<span class="logo">IntelliTestProctor</span></div>
 <?php
  include_once 'dbConnection.php';
 session_start();
@@ -74,7 +74,7 @@ echo '<span class="pull-right top title1" ><span class="log1"><span class="glyph
         <li <?php if(@$_GET['q']==0) echo'class="active"'; ?>><a href="dash.php?q=0">Home<span class="sr-only">(current)</span></a></li>
         <li <?php if(@$_GET['q']==1) echo'class="active"'; ?>><a href="dash.php?q=1">User</a></li>
 		<li <?php if(@$_GET['q']==2) echo'class="active"'; ?>><a href="dash.php?q=2">Ranking</a></li>
-		<!-- <li <?php if(@$_GET['q']==3) echo'class="active"'; ?>><a href="dash.php?q=3">Feedback</a></li> -->
+		<li <?php if(@$_GET['q']==3) echo'class="active"'; ?>><a href="dash.php?q=3">Feedback</a></li>
         <li class="dropdown <?php if(@$_GET['q']==4 || @$_GET['q']==5) echo'active"'; ?>">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quiz<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -173,6 +173,51 @@ echo '</table></div></div>';
 
 }?>
 <!--user end-->
+
+<!--feedback start-->
+<?php if(@$_GET['q']==3) {
+$result = mysqli_query($con,"SELECT * FROM `feedback` ORDER BY `feedback`.`date` DESC") or die('Error');
+echo  '<div class="panel"><div class="table-responsive"><table class="table table-striped title1">
+<tr><td><b>S.N.</b></td><td><b>Subject</b></td><td><b>Email</b></td><td><b>Date</b></td><td><b>Time</b></td><td><b>By</b></td><td></td><td></td></tr>';
+$c=1;
+while($row = mysqli_fetch_array($result)) {
+	$date = $row['date'];
+	$date= date("d-m-Y",strtotime($date));
+	$time = $row['time'];
+	$subject = $row['subject'];
+	$name = $row['name'];
+	$email = $row['email'];
+	$id = $row['id'];
+	 echo '<tr><td>'.$c++.'</td>';
+	echo '<td><a title="Click to open feedback" href="dash.php?q=3&fid='.$id.'">'.$subject.'</a></td><td>'.$email.'</td><td>'.$date.'</td><td>'.$time.'</td><td>'.$name.'</td>
+	<td><a title="Open Feedback" href="dash.php?q=3&fid='.$id.'"><b><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></b></a></td>';
+	echo '<td><a title="Delete Feedback" href="update.php?fdid='.$id.'"><b><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></b></a></td>
+
+	</tr>';
+}
+echo '</table></div></div>';
+}
+?>
+<!--feedback closed-->
+
+<!--feedback reading portion start-->
+<?php if(@$_GET['fid']) {
+echo '<br />';
+$id=@$_GET['fid'];
+$result = mysqli_query($con,"SELECT * FROM feedback WHERE id='$id' ") or die('Error');
+while($row = mysqli_fetch_array($result)) {
+	$name = $row['name'];
+	$subject = $row['subject'];
+	$date = $row['date'];
+	$date= date("d-m-Y",strtotime($date));
+	$time = $row['time'];
+	$feedback = $row['feedback'];
+	
+echo '<div class="panel"<a title="Back to Archive" href="update.php?q1=2"><b><span class="glyphicon glyphicon-level-up" aria-hidden="true"></span></b></a><h2 style="text-align:center; margin-top:-15px;font-family: "Ubuntu", sans-serif;"><b>'.$subject.'</b></h1>';
+ echo '<div class="mCustomScrollbar" data-mcs-theme="dark" style="margin-left:10px;margin-right:10px; max-height:450px; line-height:35px;padding:5px;"><span style="line-height:35px;padding:5px;">-&nbsp;<b>DATE:</b>&nbsp;'.$date.'</span>
+<span style="line-height:35px;padding:5px;">&nbsp;<b>Time:</b>&nbsp;'.$time.'</span><span style="line-height:35px;padding:5px;">&nbsp;<b>By:</b>&nbsp;'.$name.'</span><br />'.$feedback.'</div></div>';}
+}?>
+<!--Feedback reading portion closed-->
 
 <!--add quiz start-->
 <?php
